@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons_movie_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_background_path"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:alpha="0.50"
+            android:contentDescription="movie_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+        <ImageView
+            android:id="@+id/img_info"
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="movie image"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_title"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/txt_rate"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_circle"
+            android:gravity="center"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="11sp"
+            app:layout_constraintStart_toEndOf="@+id/img_info"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SmallSp"
+            tools:text="14" />
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/txt_rate"
+            tools:text="movie_title"
+            android:ellipsize="end"
+            android:layout_marginEnd="10dp"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txt_rate"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_release"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_title"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/txt_rate"
+            tools:text="movie_rating"
+            android:ellipsize="end"
+            android:layout_marginEnd="10dp"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txt_rate"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/txt_description"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@id/txt_release"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/img_info"
+            android:ellipsize="end"
+            android:layout_marginEnd="10dp"
+            android:textColor="@android:color/primary_text_light"
+            app:layout_constraintBottom_toTopOf="@+id/line_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_info"
+            app:layout_constraintTop_toBottomOf="@+id/txt_release"
+            tools:text="movie_description" />
+
+        <View
+            android:id="@+id/line_id"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="10dp"
+            android:background="@android:color/darker_gray"
+            android:visibility="visible"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/txt_more_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_info" />
+
+        <TextView
+            android:id="@+id/txt_more_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line_id"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/img_info"
+            android:text="more info"
+            android:layout_marginBottom="20dp"
+            android:textColor="@android:color/primary_text_light"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_info"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_info"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
